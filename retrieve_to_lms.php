@@ -45,17 +45,15 @@ $result=mysqli_query($conn,$sql)
     <table class="table table-dark table-hover">
         <tr>
             <th>id</th>
-            <th>Image</th>
             <th>Section</th>
             <th>Name</th>
             <th>Email</th>
             <th>Action</th>
-            <th>Accepted or rejected</th>
+            <th>Status</th>
         </tr>
         <?php foreach ($result as $row){ ?>
             <tr>
                 <td><?php echo$row['id']?></td>
-                <td><img src="upload/<?php echo $row['image']?>" height= "2%" width="5%"></td>
                 <td><?php echo $row['section']?></td>
                 <td><?php echo $row['name']?></td>
                 <td><?php echo $row['email']?></td>
