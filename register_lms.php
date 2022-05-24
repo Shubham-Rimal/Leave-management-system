@@ -1,15 +1,16 @@
 <?php
-require_once "config_lms.php";
+require_once "CRUD/config_lms.php";
 
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "";
+$username = $password = $confirm_password = $section = "";
+$username_err = $password_err = $confirm_password_err = $section_err = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (empty(trim($_POST["username"]))) {
         $username_err = "Username cannot be blank";
     } else {
-        $sql = "SELECT id FROM users WHERE username = ?";
+        $sql = "SELECT id FROM user_profile WHERE username = ?";
         $stmt = mysqli_prepare($conn, $sql);
+
         if ($stmt) {
             mysqli_stmt_bind_param($stmt, "s", $param_username);
             $param_username = trim($_POST['username']);
@@ -32,29 +33,36 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     mysqli_stmt_close($stmt);
 
     if (empty(trim($_POST['password']))) {
-        $password_err = "Password cannot be blank";
+        $password_err = "Password cannot be blank!";
     } elseif (strlen(trim($_POST['password'])) < 5) {
-        $password_err = "Password cannot be less than 5 characters";
+        $password_err = "Password cannot be less than 5 characters!";
     } else {
         $password = trim($_POST['password']);
     }
     if (trim($_POST['password']) != trim($_POST['confirm_password'])) {
-        $password_err = "Passwords should match";
+        $password_err = "Passwords should match!";
+    }
+
+    if (empty(trim($_POST['section']))){
+        $section_err = "Please enter a section name!";
+    }else {
+        $section = trim($_POST['section']);
     }
 
     $role = $_POST['role'];
     echo $role;
 
-    if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
-        $sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
+    if (empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($section_err)) {
+        $sql = "INSERT INTO user_profile (username, password, role, section) VALUES (?, ?, ?, ?)";
         $stmt = mysqli_prepare($conn, $sql);
 
         if ($stmt) {
-            mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_password, $param_role);
+            mysqli_stmt_bind_param($stmt, "ssss", $param_username, $param_password, $param_role, $param_section);
 
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT);
             $param_role= $role;
+            $param_section = $section;
 
             if (mysqli_stmt_execute($stmt)) {
                 header("location: login_lms.php");
@@ -90,9 +98,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <label for="confirm_password">Confirm Password:</label>
         <input type="password"  name="confirm_password" id="confirm_password"
                placeholder="Confirm Password">
+        <label for="section">Section:</label>
+        <input type="text" name="section" id="section" placeholder="section">
 
         <select name="role">
-            <option value="admin">Teacher</option>
+            <option value="teacher">Teacher</option>
             <option value="student">Student</option>
         </select>
 

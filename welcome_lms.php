@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true)
 {
     header("location: login_lms.php");
 }
@@ -19,8 +19,10 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 <body>
 <a href="logout_lms.php">Logout</a>
 
+<div class="container mt-4"
     <h3><?php echo "Welcome user ". $_SESSION['username']?>! Has your request been approved? Better Check!</h3>
     <hr>
+</div>
 
-</div></body>
+</body>
 </html>

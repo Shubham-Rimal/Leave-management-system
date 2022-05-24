@@ -4,7 +4,7 @@ session_start();
 
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 {
-    header("location: login_lms.php");
+    header("location: admin_welcome_lms.php");
 }
 ?>
 
@@ -20,10 +20,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 <body>
 <a href="logout_lms.php">Logout</a>
 
-
-
 <div class="container mt-4">
-    <h3><?php echo "Welcome admin ". $_SESSION['username']?>! Are there any pending requests waiting approval? Better check!</h3>
+    <h3><?php echo "Welcome teacher ". $_SESSION['username']?>! Are there any pending requests waiting approval? Better check!</h3>
     <hr>
 
 </div></body>
