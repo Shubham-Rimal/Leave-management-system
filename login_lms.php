@@ -6,7 +6,7 @@ if(isset($_SESSION['username']))
     header("location: welcome_lms.php");
     exit;
 }
-require_once "CRUD/config_lms.php";
+require_once "config_lms.php";
 $username = $password = "";
 $err = "";
 

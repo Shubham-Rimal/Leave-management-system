@@ -23,7 +23,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 <div class="container mt-4">
     <h3><?php echo "Welcome teacher ". $_SESSION['username']?>! Are there any pending requests waiting approval? Better check!</h3>
     <hr>
-    <button><a href="CRUD/retrieve_to_lms.php">See requests</a></button>
+    <button><a href="retrieve_to_lms.php">See requests</a></button>
     <button><a href=""></a></button>
 
 </div></body>

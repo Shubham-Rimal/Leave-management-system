@@ -1,5 +1,5 @@
 <?php
-require_once "CRUD/config_lms.php";
+require_once "config_lms.php";
 
 $username = $password = $confirm_password = $section = "";
 $username_err = $password_err = $confirm_password_err = $section_err = "";

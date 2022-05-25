@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($leave_reason_err) && empty($name_err) && empty($leave_end_date_err) && empty($leave_start_date_err)) {
 
 
-        $sql = "INSERT INTO leave_requests (name, user_profile_id, leave_end_date, leave_start_date, leave_reason) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO leave_requests (id, name, user_profile_id, leave_end_date, leave_start_date, leave_reason) VALUES (?, ?, ?, ?, ?, ?)";
 
         if ($stmt = mysqli_prepare($conn, $sql)) {
             mysqli_stmt_bind_param($stmt, "sisss", $name, $user_profile, $leave_end_date, $leave_start_date, $leave_reason);
