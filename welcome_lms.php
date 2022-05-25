@@ -22,6 +22,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true)
 <div class="container mt-4"
     <h3><?php echo "Welcome user ". $_SESSION['username']?>! Has your request been approved? Better Check!</h3>
     <hr>
+<a href="create_lms.php">Apply for leave</a>
+<a href="retrieve_to_lms.php">See requests for leave</a>
 </div>
 
 </body>

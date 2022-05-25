@@ -59,7 +59,7 @@ $result=mysqli_query($conn,$sql)
                 <td><?php echo $row['leave_end_date']?></td>
                 <td><?php echo $row['leave_reason']?></td>
                 <td><a href="delete_details_lms.php">Delete</a></td>
-                <td><a href=""></a></td>
+                <td><a href="update_details_lms.php">Edit</a></td>
             </tr>
         <?php } ?>
     </table>

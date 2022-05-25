@@ -1,7 +1,7 @@
 <?php
 require_once "config_lms.php";
 $id = $_GET['id'];
-$sql = "SELECT * FROM leave_requests WHERE id=?";
+$sql = "SELECT * FROM leave_requests WHERE id=$id";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 
