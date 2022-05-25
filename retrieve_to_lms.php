@@ -1,6 +1,4 @@
 <?php
-session_start();
-echo $_SESSION['id'];
 require_once "config_lms.php";
 $sql = "SELECT * FROM leave_requests";
 $result=mysqli_query($conn,$sql)
@@ -49,15 +47,19 @@ $result=mysqli_query($conn,$sql)
             <th>Leave Start Date</th>
             <th>Leave End Date</th>
             <th>Leave Reason</th>
+            <th>Action-1</th>
+            <th>Action-2</th>
         </tr>
         <?php foreach ($result as $row){ ?>
             <tr>
                 <td><?php echo $row['id']?></td>
-                <td><?php echo $_SESSION['username']?></td>
+                <td><?php echo $row['user_profile_id']?></td>
                 <td><?php echo $row['name']?></td>
                 <td><?php echo $row['leave_start_date']?></td>
                 <td><?php echo $row['leave_end_date']?></td>
                 <td><?php echo $row['leave_reason']?></td>
+                <td><a href="delete_details_lms.php">Delete</a></td>
+                <td><a href=""></a></td>
             </tr>
         <?php } ?>
     </table>
