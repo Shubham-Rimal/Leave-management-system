@@ -1,9 +1,11 @@
 <?php
+session_start();
+echo $_SESSION['id'];
 require_once "config_lms.php";
 $sql = "SELECT * FROM leave_requests";
 $result=mysqli_query($conn,$sql)
 ?>
-    <html>
+    <html lang="en">
     <head><title>Retrieve</title></head>
     <header class="p-3 bg-dark text-white">
         <div class="container">
@@ -13,7 +15,7 @@ $result=mysqli_query($conn,$sql)
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="welcome_lms.php" class="nav-link px-2 text-secondary">Home</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
@@ -53,19 +55,12 @@ $result=mysqli_query($conn,$sql)
         </tr>
         <?php foreach ($result as $row){ ?>
             <tr>
-                <td><?php echo$row['id']?></td>
+                <td><?php echo $row['id']?></td>
+                <td><?php echo $_SESSION['username']?></td>
                 <td><?php echo $row['name']?></td>
-                <td><?php echo $row['name']?></td>
-                <td><?php echo $row['email']?></td>
-                <td><select>Action
-                        <option><a href="update_details_lms.php? id=<?php echo $row["id"]?>">Edit</a></option>
-                        <option><a href="delete_details_lms.php? id=<?php echo $row["id"]?>">Delete</a></option>
-                    </select></td>
-                <td><select>
-                        <option>On hold</option>
-                        <option>Approved</option>
-                        <option>Rejected</option>
-                    </select></td>
+                <td><?php echo $row['leave_start_date']?></td>
+                <td><?php echo $row['leave_end_date']?></td>
+                <td><?php echo $row['leave_reason']?></td>
             </tr>
         <?php } ?>
     </table>

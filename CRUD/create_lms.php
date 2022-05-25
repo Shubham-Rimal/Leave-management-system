@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO leave_requests (name, user_profile_id, leave_end_date, leave_start_date, leave_reason) VALUES (?, ?, ?, ?, ?)";
 
         if ($stmt = mysqli_prepare($conn, $sql)) {
-            mysqli_stmt_bind_param($stmt, "ssssi", $name,$leave_end_date, $leave_start_date, $leave_reason, $user_profile);
+            mysqli_stmt_bind_param($stmt, "sisss", $name, $user_profile, $leave_end_date, $leave_start_date, $leave_reason);
 
             $leave_reason= trim($_POST['leave_reason']);
             $name = trim($_POST['name']);
