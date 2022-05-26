@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo $_SESSION['id'];
 require_once "config_lms.php";
 
 $leave_reason = $name = $leave_end_date = $leave_start_date = "";
