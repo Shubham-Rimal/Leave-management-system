@@ -72,28 +72,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <html lang="en">
 <head><title>Create</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
+    <link href="create.css" rel="stylesheet">
 </head>
+<div class="all">
 <div class="container mt-3">
 
-    <div class="form-group">
-        <h2>Create page</h2>
+    <h2 class="create_title">Create page</h2>
+    <div class="card">
         <form action="create_lms.php" method="post" enctype="multipart/form-data">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name"><br>
-            <label for="leave_start_date">Leave start date:</label>
+            <div class="input-group">
+                <input required="" type="text" name="name" autocomplete="off" class="input">
+                <label class="user-label">First Name</label>
+            </div>
+
             <input type="text" class="form-control" id="leave_start_date" placeholder="Enter leave start date." name="leave_start_date"><br>
-            <label for="leave_end_date">Leave end date:</label>
             <input type="text" class="form-control" id="leave_end_date" placeholder="Enter leave end date" name="leave_end_date"><br>
-            <label for="leave_reason">Leave reason:</label>
             <input type="text" class="form-control" id="leave_reason" placeholder="Enter reason for leave." name="leave_reason"><br>
             <button type="submit">Submit</button>
         </form>
     </div>
 </div>
-
+</div>
 </html>
