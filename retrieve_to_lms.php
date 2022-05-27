@@ -30,15 +30,7 @@ $result=mysqli_query($conn,$sql)
     </header>
     <body>
     <a href="create_lms.php">Create</a>
-    <form action="search_lms.php" method="post">
-        <input type="text" name="search_keyword" required>
-        <select name="search_field" required>
-            <option value="section" selected>Section</option>
-            <option value="name">Name</option>
-            <option value="email">Email</option>
-        </select>
-        <input type="submit" value="Search">
-    </form>
+
     <table class="table table-dark table-hover">
         <tr>
             <th>id</th>

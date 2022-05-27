@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once "config_lms.php";
 
 $status = $reason = $applicant_name = $applicant_leave_reason = "";
@@ -53,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $applicant_leave_reason = trim($_POST['applicant_leave_reason']);
 
             if (mysqli_stmt_execute($stmt)) {
-                header("location: retrieve_to_lms.php");
+                header("location: approved_requests.php");
             } else {
                 echo "ERROR: Could not execute query: $sql. " . mysqli_error($conn);
             }
@@ -75,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <h2 class="create_title">Process Request Page</h2>
         <div class="card">
-            <form action="create_lms.php" method="post" enctype="multipart/form-data">
+            <form action="request_processing.php" method="post" enctype="multipart/form-data">
                 <label for="applicant_name">Applicant's name:</label>
                 <input type="text" id="applicant_name" name="applicant_name" placeholder="Applicant's name"><br>
                 <label for="applicant_leave_reason">Applicant's leave reason:</label>
