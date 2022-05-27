@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $applicant_leave_reason = trim($_POST['applicant_leave_reason']);
 
             if (mysqli_stmt_execute($stmt)) {
-                header("location: approved_requests.php");
+                header("location: processed_requests.php");
             } else {
                 echo "ERROR: Could not execute query: $sql. " . mysqli_error($conn);
             }

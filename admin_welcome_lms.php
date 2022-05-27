@@ -25,6 +25,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     <hr>
     <button><a href="retrieve_to_lms.php">See requests</a></button>
     <button><a href="request_processing.php">Requests processing</a></button>
+    <button><a href="processed_requests.php">Processed requests</a></button>
 
 </div></body>
 </html>
