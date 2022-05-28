@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head><title>Create</title>
     <link href="css/create.css" rel="stylesheet">
 </head>
-<body >
+<body>
 <div class="all">
 <div class="container mt-3">
 
@@ -101,7 +101,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
             </div>
     </div>
-</div>
 </div>
 </body>
 </html>
