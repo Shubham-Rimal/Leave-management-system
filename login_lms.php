@@ -69,26 +69,29 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>LMS-Login</title>
+    <link href="css/signinup.css" rel="stylesheet">
 </head>
 <body>
-
-<h1>LMS-Login System</h1>
-<a href="register_lms.php">Register</a>
-<a href="login_lms.php">Login</a>
-
-
-<div class="container mt-4">
-    <h3>Please Login Here:</h3>
-    <hr>
-
+<div class="all">
+<h1 class="header">LMS-Login</h1>
+<button class="redirect"><a href="register_lms.php"><p style="font-family: 'Agency FB'">Register</p></a></button>
+<button class="redirect"><a href="login_lms.php"><p style="font-family: 'Agency FB'">Login</p></a></button>
+    <div class="card">
+    <div class="container mt-4">
     <form action="login_lms.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" placeholder="Enter Username">
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" placeholder="Enter Password">
-        <button type="submit" >Submit</button>
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" id="username" placeholder="Enter Username" class="input"><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" id="password" placeholder="Enter Password" class="input"><br><br>
+        <button type="submit" class="button">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>LOGIN</button>
     </form>
 
+</div>
+</div>
 </div>
 </body>
 </html>

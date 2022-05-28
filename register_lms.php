@@ -81,33 +81,38 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <!doctype html>
 <html lang="en">
 <head>
+    <title>Register</title>
+    <link href="css/signinup.css" rel="stylesheet">
 </head>
 <body>
-<h1>Register</h1>
-<a href="register_lms.php">Register</a>
-<a href="login_lms.php">Login</a>
-
+<div class="all">
+<h1 class="header">LMS-Register</h1>
+    <button class="redirect"><a href="register_lms.php"><p style="font-family: 'Agency FB'">Register</p></a></button>
+    <button class="redirect"><a href="login_lms.php"><p style="font-family: 'Agency FB'">Login</p></a></button>
 <div class="container mt-4">
-    <hr>
+    <div class="card">
     <form action="register_lms.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" placeholder="Email">
-
-        <label for="password">Password:</label>
-        <input type="password"  name="password" id="password" placeholder="Password">
-        <label for="confirm_password">Confirm Password:</label>
-        <input type="password"  name="confirm_password" id="confirm_password"
-               placeholder="Confirm Password">
-        <label for="section">Section:</label>
-        <input type="text" name="section" id="section" placeholder="section">
-
-        <select name="role">
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" id="username" placeholder="Username" class="input"><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password"  name="password" id="password" placeholder="Password" class="input"><br><br>
+        <label for="confirm_password">Confirm Password:</label><br>
+        <input type="password"  name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="input"><br><br>
+        <label for="section">Section:</label><br>
+        <input type="text" name="section" id="section" placeholder="Section" class="input"><br><br>
+        <label for="role">Role:</label><br>
+        <select name="role" class="input">
             <option value="teacher">Teacher</option>
             <option value="student">Student</option>
-        </select>
-
-        <button type="submit" >Register</button>
+        </select><br><br>
+        <button type="submit" class="button">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Register</button>
     </form>
+</div>
+</div>
 </div>
 </body>
 </html>

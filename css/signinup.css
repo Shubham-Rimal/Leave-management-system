@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+}
+
+.all{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, indigo, darkorange);
+}
+
+.header{
+    color: darkorange;
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Agency FB";
+    position: relative;
+    top: 5vh;
+}
+
+.redirect{
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    left: 82.5vh;
+    top: 7.5vh;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+}
+.redirect::before{
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+.redirect:hover::before{
+    width: 9em;
+}
+
+.card {
+    width: 30%;
+    height: 60vh;
+    background: black;
+    border: 2px solid rebeccapurple;
+    box-shadow: 2px 2px 15px #000000 inset;
+    text-align: center;
+    color: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Agency FB';
+    position: relative;
+    left: 35%;
+    top: 10vh;
+}
+
+.card:hover {
+    color: plum;
+    box-shadow: 2px 2px 15px mediumpurple inset;
+}
+
+.input {
+    color: #8707ff;
+    border: 2px solid #8707ff;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    max-width: 190px;
+}
+
+.input:active {
+    box-shadow: 2px 2px 15px #8707ff inset;
+}
+
+.button {
+    position: relative;
+    padding: 1em 1.8em;
+    outline: none;
+    border: 1px solid #303030;
+    background: #212121;
+    color: #ae00ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+    box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
+    transition-delay: 0.6s;
+}
+
+.button span {
+    position: absolute;
+}
+
+.button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ae00ff);
+}
+
+.button:hover span:nth-child(1) {
+    left: 100%;
+    transition: 0.7s;
+}
+
+.button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #001eff);
+}
+
+.button:hover span:nth-child(3) {
+    right: 100%;
+    transition: 0.7s;
+    transition-delay: 0.35s;
+}
+
+.button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #ae00ff);
+}
+
+.button:hover span:nth-child(2) {
+    top: 100%;
+    transition: 0.7s;
+    transition-delay: 0.17s;
+}
+
+.button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #001eff);
+}
+
+.button:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 0.7s;
+    transition-delay: 0.52s;
+}
+
+.button:active {
+    background: #ae00af;
+    background: linear-gradient(to top right, #ae00af, #001eff);
+    color: #bfbfbf;
+    box-shadow: 0 0 8px #ae00ff, 0 0 8px #001eff, 0 0 8px #ae00ff;
+    transition: 0.1s;
+}
+
+.button:active span:nth-child(1)
+span:nth-child(2)
+span:nth-child(2)
+span:nth-child(2) {
+    transition: none;
+    transition-delay: none;
+}
+
