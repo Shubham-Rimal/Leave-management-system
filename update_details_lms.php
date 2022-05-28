@@ -133,17 +133,33 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
 <html lang="en">
 <head>
     <title>Edit Data</title>
+    <link href="css/create.css" rel="stylesheet">
 </head>
 <body>
 <a href="retrieve_to_lms.php">Home</a>
 <br><br>
-<form method="post" action="" enctype="multipart/form-data">
-    <input type="text" name="name" value="<?php echo $name; ?>"<br><br>
-    <input type="text" name="leave_start_date" value="<?php echo $leave_start_date; ?>"<br><br>
-    <input type="text" name="leave_end_date" value="<?php echo $leave_end_date; ?>" <br><br>
-    <input type="text" name="leave_reason" value="<?php echo $leave_reason; ?>"><br><br>
-    <input type="hidden" name="id" value="<?php echo $id; ?>"/>
-    <input type="submit" value="update">
-</form>
-
+<div class="all">
+    <h2 class="create_title">Update Page</h2>
+    <div class="card">
+        <form method="post" action="" enctype="multipart/form-data">
+            <div class="input-group">
+                <input required="" type="text" name="name" autocomplete="off" class="input" id="name" value="<?php echo $name; ?>">
+                <label class="user-label" style="font-family: 'Agency FB'">Name</label><br><br><br>
+            </div>
+            <div class="input-group">
+                <input required="" type="text" name="leave_start_date" autocomplete="off" class="input" id="leave_start_date" value="<?php echo $leave_start_date; ?>">
+                <label class="user-label" style="font-family: 'Agency FB'">Leave start date</label><br><br><br>
+            </div>
+            <div class="input-group">
+                <input required="" type="text" name="leave_end_date" autocomplete="off" class="input" id="leave_end_date" value="<?php echo $leave_end_date; ?>">
+                <label class="user-label" style="font-family: 'Agency FB'">Leave end date</label><br><br><br>
+            </div>
+            <div class="input-group">
+                <input required="" type="text" name="leave_reason" autocomplete="off" class="input" id="leave_reason" value="<?php echo $leave_reason; ?>">
+                <label class="user-label" style="font-family: 'Agency FB'">Leave reason</label><br>
+            </div>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+</div>
 </body>

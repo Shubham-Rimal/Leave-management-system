@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <html lang="en">
 <head><title>Request Processing</title>
-    <link href="create.css" rel="stylesheet">
+    <link href="css/create.css" rel="stylesheet">
 </head>
 <div class="all">
     <div class="container mt-3">
@@ -75,15 +75,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2 class="create_title">Process Request Page</h2>
         <div class="card">
             <form action="request_processing.php" method="post" enctype="multipart/form-data">
-                <label for="applicant_name">Applicant's name:</label>
-                <input type="text" id="applicant_name" name="applicant_name" placeholder="Applicant's name"><br>
-                <label for="applicant_leave_reason">Applicant's leave reason:</label>
-                <input type="text" id="applicant_leave_reason" name="applicant_leave_reason" placeholder="Applicant's leave reason"><br>
-                <label for="status">Status:</label>
-                <input type="text" id="status" name="status" placeholder="Status"><br>
-                <label for="reason">Reason:</label>
-                <input type="text" id="reason" name="reason" placeholder="Reason"><br>
-                <button type="submit">Submit</button>
+                <div class="input-group">
+                    <input required="" type="text" name="applicant_name" autocomplete="off" class="input" id="applicant_name">
+                    <label class="user-label" style="font-family: 'Agency FB'">Applicant's name</label><br><br><br>
+                </div>
+                <div class="input-group">
+                    <input required="" type="text" name="applicant_leave_reason" autocomplete="off" class="input" id="applicant_leave_reason">
+                    <label class="user-label" style="font-family: 'Agency FB'">Applicant's leave reason</label><br><br><br>
+                </div>
+                <div class="input-group">
+                    <input required="" type="text" name="status" autocomplete="off" class="input" id="status">
+                    <label class="user-label" style="font-family: 'Agency FB'">Status</label><br><br><br>
+                </div>
+                <div class="input-group">
+                    <input required="" type="text" name="reason" autocomplete="off" class="input" id="reason">
+                    <label class="user-label" style="font-family: 'Agency FB'">Reason</label><br>
+                </div>
+                <button type="submit" class="button">Submit</button>
             </form>
         </div>
     </div>
