@@ -72,8 +72,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <html lang="en">
 <head><title>Create</title>
-    <link href="create.css" rel="stylesheet">
+    <link href="css/create.css" rel="stylesheet">
 </head>
+<body >
 <div class="all">
 <div class="container mt-3">
 
@@ -81,16 +82,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="card">
         <form action="create_lms.php" method="post" enctype="multipart/form-data">
             <div class="input-group">
-                <input required="" type="text" name="name" autocomplete="off" class="input">
-                <label class="user-label">First Name</label>
+                <input required="" type="text" name="name" autocomplete="off" class="input" id="name">
+                <label class="user-label" style="font-family: 'Agency FB'">Name</label><br><br><br>
             </div>
-
-            <input type="text" class="form-control" id="leave_start_date" placeholder="Enter leave start date." name="leave_start_date"><br>
-            <input type="text" class="form-control" id="leave_end_date" placeholder="Enter leave end date" name="leave_end_date"><br>
-            <input type="text" class="form-control" id="leave_reason" placeholder="Enter reason for leave." name="leave_reason"><br>
-            <button type="submit">Submit</button>
+            <div class="input-group">
+                <input required="" type="text" name="leave_start_date" autocomplete="off" class="input" id="leave_start_date">
+                <label class="user-label" style="font-family: 'Agency FB'">Leave start date</label><br><br><br>
+            </div>
+            <div class="input-group">
+                <input required="" type="text" name="leave_end_date" autocomplete="off" class="input" id="leave_end_date">
+                <label class="user-label" style="font-family: 'Agency FB'">Leave end date</label><br><br><br>
+            </div>
+            <div class="input-group">
+                <input required="" type="text" name="leave_reason" autocomplete="off" class="input" id="leave_reason">
+                <label class="user-label" style="font-family: 'Agency FB'">Leave reason</label><br>
+            </div>
+            <button type="submit" class="button">Submit</button>
         </form>
+            </div>
     </div>
 </div>
 </div>
+</body>
 </html>
