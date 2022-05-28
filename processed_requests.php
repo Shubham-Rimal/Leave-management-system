@@ -4,51 +4,37 @@ $sql = "SELECT * FROM processed_requests";
 $result=mysqli_query($conn,$sql)
 ?>
 <html lang="en">
-<head><title>Retrieve</title></head>
-<header class="p-3 bg-dark text-white">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-            </a>
+<head><title>Retrieve</title>
+    <link rel="stylesheet" href="css/retrieve.css">
+</head>
 
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="welcome_lms.php" class="nav-link px-2 text-secondary">Home</a></li>
-                <li><a href="logout_lms.php" class="nav-link px-2 text-white">Logout</a></li>
-            </ul>
-
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-            </form>
-
-            <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2">Login</button>
-                <button type="button" class="btn btn-warning">Sign-up</button>
-            </div>
-        </div>
-    </div>
-</header>
 <body>
-<a href="welcome_lms.php">Home</a>
+<div class="all">
+    <div class="header">
+        <button class="button"><a href="logout_lms.php"><p class="a">LOGOUT</p></a></button>
 
-<table class="table table-dark table-hover">
+        <h1 class="title">PROCESSED REQUESTS</h1>
+    </div>
+<br><br><br>
+<table class="table" border="3">
     <tr>
-        <th>id</th>
-        <th>Applicant's name</th>
-        <th>Applicant's leave reason</th>
-        <th>Status</th>
-        <th>Reason</th>
+        <th class="th">id</th>
+        <th class="th">Applicant's name</th>
+        <th class="th">Applicant's leave reason</th>
+        <th class="th">Status</th>
+        <th class="th">Reason</th>
     </tr>
     <?php foreach ($result as $row){ ?>
         <tr>
-            <td><?php echo $row['id']?></td>
-            <td><?php echo $row['applicant_name']?></td>
-            <td><?php echo $row['applicant_leave_reason']?></td>
-            <td><?php echo $row['status']?></td>
-            <td><?php echo $row['reason']?></td>
+            <td class="td"><?php echo $row['id']?></td>
+            <td class="td"><?php echo $row['applicant_name']?></td>
+            <td class="td"><?php echo $row['applicant_leave_reason']?></td>
+            <td class="td"><?php echo $row['status']?></td>
+            <td class="td"><?php echo $row['reason']?></td>
         </tr>
     <?php } ?>
 </table>
+</div>
 </body>
 </html>
 
